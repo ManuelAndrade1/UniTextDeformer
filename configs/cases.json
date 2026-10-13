@@ -1,0 +1,162 @@
+[
+  {
+    "id": "C02",
+    "case_key": "spot_to_stag",
+    "mesh": "meshes/spot.obj",
+    "mesh_sha256": "d48ca8edbacbc35bf9b536d797c908021b19ce22f17e1e3a041f4f323a54ed49",
+    "base_text_prompt": "a cow",
+    "text_prompt": "a stag"
+  },
+  {
+    "id": "C03",
+    "case_key": "spot_to_alligator",
+    "mesh": "meshes/spot.obj",
+    "mesh_sha256": "d48ca8edbacbc35bf9b536d797c908021b19ce22f17e1e3a041f4f323a54ed49",
+    "base_text_prompt": "a cow",
+    "text_prompt": "an alligator"
+  },
+  {
+    "id": "C04",
+    "case_key": "eiffel_tower_to_pagoda",
+    "mesh": "meshes/eiffel_tower.obj",
+    "mesh_sha256": "30210cb40f2f7e3af51bb005c5e33e84a1c692d115a75731a1bb3f9aa6c3039f",
+    "base_text_prompt": "the Eiffel Tower",
+    "text_prompt": "a pagoda"
+  },
+  {
+    "id": "C05",
+    "case_key": "eiffel_tower_to_skyscraper",
+    "mesh": "meshes/eiffel_tower.obj",
+    "mesh_sha256": "30210cb40f2f7e3af51bb005c5e33e84a1c692d115a75731a1bb3f9aa6c3039f",
+    "base_text_prompt": "the Eiffel Tower",
+    "text_prompt": "a skyscraper"
+  },
+  {
+    "id": "C06",
+    "case_key": "eiffel_tower_to_lighthouse",
+    "mesh": "meshes/eiffel_tower.obj",
+    "mesh_sha256": "30210cb40f2f7e3af51bb005c5e33e84a1c692d115a75731a1bb3f9aa6c3039f",
+    "base_text_prompt": "the Eiffel Tower",
+    "text_prompt": "a lighthouse"
+  },
+  {
+    "id": "C07",
+    "case_key": "hand_to_octopus",
+    "mesh": "meshes/hand.obj",
+    "mesh_sha256": "46c73eebb8a08830efed54d17287fd0ab475843cccdea2c3b9195b1a2a524c9a",
+    "base_text_prompt": "a hand",
+    "text_prompt": "an octopus"
+  },
+  {
+    "id": "C08",
+    "case_key": "hand_to_boxing_glove",
+    "mesh": "meshes/hand.obj",
+    "mesh_sha256": "46c73eebb8a08830efed54d17287fd0ab475843cccdea2c3b9195b1a2a524c9a",
+    "base_text_prompt": "a hand",
+    "text_prompt": "a boxing glove"
+  },
+  {
+    "id": "C09",
+    "case_key": "hand_to_hand_with_long_nails",
+    "mesh": "meshes/hand.obj",
+    "mesh_sha256": "46c73eebb8a08830efed54d17287fd0ab475843cccdea2c3b9195b1a2a524c9a",
+    "base_text_prompt": "a hand",
+    "text_prompt": "a hand with long nails"
+  },
+  {
+    "id": "C10",
+    "case_key": "donkey_to_horse",
+    "mesh": "meshes/donkey.obj",
+    "mesh_sha256": "ab8960c3b48dd95d71878bfb24863e9ae3932ed8696bbf376427b069d2428d79",
+    "base_text_prompt": "a donkey",
+    "text_prompt": "a horse"
+  },
+  {
+    "id": "C11",
+    "case_key": "donkey_to_camel",
+    "mesh": "meshes/donkey.obj",
+    "mesh_sha256": "ab8960c3b48dd95d71878bfb24863e9ae3932ed8696bbf376427b069d2428d79",
+    "base_text_prompt": "a donkey",
+    "text_prompt": "a camel"
+  },
+  {
+    "id": "C12",
+    "case_key": "donkey_to_giraffe",
+    "mesh": "meshes/donkey.obj",
+    "mesh_sha256": "ab8960c3b48dd95d71878bfb24863e9ae3932ed8696bbf376427b069d2428d79",
+    "base_text_prompt": "a donkey",
+    "text_prompt": "a giraffe"
+  },
+  {
+    "id": "C13",
+    "case_key": "shoe1_to_army_boot",
+    "mesh": "meshes/shoe1.obj",
+    "mesh_sha256": "64d14a2fc0e245c2bf7416ff40eebffe0ea526ba9b4f9f62ec535c830c299c42",
+    "base_text_prompt": "a shoe",
+    "text_prompt": "an army boot"
+  },
+  {
+    "id": "C14",
+    "case_key": "shoe1_to_sporty_shoe",
+    "mesh": "meshes/shoe1.obj",
+    "mesh_sha256": "64d14a2fc0e245c2bf7416ff40eebffe0ea526ba9b4f9f62ec535c830c299c42",
+    "base_text_prompt": "a shoe",
+    "text_prompt": "a sporty shoe"
+  },
+  {
+    "id": "C15",
+    "case_key": "shoe1_to_high_heeled_shoe",
+    "mesh": "meshes/shoe1.obj",
+    "mesh_sha256": "64d14a2fc0e245c2bf7416ff40eebffe0ea526ba9b4f9f62ec535c830c299c42",
+    "base_text_prompt": "a shoe",
+    "text_prompt": "a high-heeled shoe"
+  },
+  {
+    "id": "C16",
+    "case_key": "vase2_to_heart_shaped_vase",
+    "mesh": "meshes/vase2.obj",
+    "mesh_sha256": "76acc316811de9d299b2e7db37ada995c6df9f27999c1ba17534e803f541eb1f",
+    "base_text_prompt": "a vase",
+    "text_prompt": "a heart-shaped vase"
+  },
+  {
+    "id": "C17",
+    "case_key": "vase2_to_diamond_shaped_vase",
+    "mesh": "meshes/vase2.obj",
+    "mesh_sha256": "76acc316811de9d299b2e7db37ada995c6df9f27999c1ba17534e803f541eb1f",
+    "base_text_prompt": "a vase",
+    "text_prompt": "a diamond-shaped vase"
+  },
+  {
+    "id": "C18",
+    "case_key": "fish_to_submarine",
+    "mesh": "meshes/fish.obj",
+    "mesh_sha256": "4d22a2f033a1883d49f0e784b1355e98383b4fae10fd7be476c1284e0b115f7c",
+    "base_text_prompt": "a fish",
+    "text_prompt": "a submarine"
+  },
+  {
+    "id": "C19",
+    "case_key": "fish_to_shark",
+    "mesh": "meshes/fish.obj",
+    "mesh_sha256": "4d22a2f033a1883d49f0e784b1355e98383b4fae10fd7be476c1284e0b115f7c",
+    "base_text_prompt": "a fish",
+    "text_prompt": "a shark"
+  },
+  {
+    "id": "C20",
+    "case_key": "fish_to_whale",
+    "mesh": "meshes/fish.obj",
+    "mesh_sha256": "4d22a2f033a1883d49f0e784b1355e98383b4fae10fd7be476c1284e0b115f7c",
+    "base_text_prompt": "a fish",
+    "text_prompt": "a whale"
+  },
+  {
+    "id": "C21",
+    "case_key": "spot_to_turtle",
+    "mesh": "meshes/spot.obj",
+    "mesh_sha256": "d48ca8edbacbc35bf9b536d797c908021b19ce22f17e1e3a041f4f323a54ed49",
+    "base_text_prompt": "a cow",
+    "text_prompt": "a turtle"
+  }
+]

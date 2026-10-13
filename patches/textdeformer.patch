@@ -1,0 +1,103 @@
+--- a/NeuralJacobianFields/MeshProcessor.py
++++ b/NeuralJacobianFields/MeshProcessor.py
+@@ -82,9 +82,11 @@
+     @staticmethod
+     def meshprocessor_from_file(fname, ttype, cpuonly=False, load_wks_samples=False, load_wks_centroids=False):
+         if fname[-4:] == '.obj':
+-            V, _, _, F, _, _ = igl.read_obj(fname)
++            read_obj = getattr(igl, 'read_obj', None) or igl.readOBJ
++            V, _, _, F, _, _ = read_obj(fname)
+         elif fname[-4:] == '.off':
+-            V,F,_ = igl.read_off(fname)
++            read_off = getattr(igl, 'read_off', None) or igl.readOFF
++            V,F,_ = read_off(fname)
+         elif fname[-4:] == '.ply':
+             V,F = igl.read_triangle_mesh(fname)
+         return MeshProcessor(V,F,ttype,os.path.dirname(fname),True, cpuonly=cpuonly, load_wks_samples=load_wks_samples, load_wks_centroids=load_wks_centroids, compute_splu=False)
+@@ -289,7 +291,8 @@
+ 
+ 
+     def sample_points(self, n):
+-        bary, found_faces = igl.random_points_on_mesh(n, self.vertices, self.faces)
++        sample_result = igl.random_points_on_mesh(n, self.vertices, self.faces)
++        bary, found_faces = sample_result[:2]
+         vert_ind =  self.faces[found_faces]
+         point_samples =  self.vertices[vert_ind[:,0]] * bary[:,0:1] + self.vertices[vert_ind[:,1]] * bary[:,1:2] + self.vertices[vert_ind[:,2]] * bary[:,2:3]
+         normal_samples = self.normals[vert_ind[:,0]] * bary[:,0:1] + self.normals[vert_ind[:,1]] * bary[:,1:2] + self.normals[vert_ind[:,2]] * bary[:,2:3]
+@@ -327,7 +330,8 @@
+ 
+ def _sample_point(VV, FF):
+     while (True):
+-        bary, found_faces = igl.random_points_on_mesh(1, VV, FF)
++        sample_result = igl.random_points_on_mesh(1, VV, FF)
++        bary, found_faces = sample_result[:2]
+         if (found_faces >= FF.shape[0]):
+             continue
+         # use to be 0.01
+--- a/NeuralJacobianFields/SourceMesh.py
++++ b/NeuralJacobianFields/SourceMesh.py
+@@ -76,7 +76,11 @@
+         self.source_vertices *= self.__random_scale
+ 
+         bb = igl.bounding_box(self.source_vertices.numpy())[0]
+-        diag = igl.bounding_box_diagonal(self.source_vertices.numpy())
++        if hasattr(igl, 'bounding_box_diagonal'):
++            diag = igl.bounding_box_diagonal(self.source_vertices.numpy())
++        else:
++            bounds = np.ptp(self.source_vertices.numpy(), axis=0)
++            diag = np.linalg.norm(bounds)
+ 
+         # self.source_mesh_centroid = torch.mean(self.source_vertices, axis=0)
+         self.source_mesh_centroid =  (bb[0] + bb[-1])/2
+@@ -146,4 +150,3 @@
+         #     self.__loaded_data[key].pin_memory()
+         return self
+ 
+-
+--- a/utilities/clip_spatial.py
++++ b/utilities/clip_spatial.py
+@@ -12,9 +12,9 @@
+ 
+ # For ViT
+ class CLIPVisualEncoder(nn.Module):
+-    def __init__(self, model_name, stride, device):
++    def __init__(self, model_name, stride, device, download_root=None):
+         super().__init__()
+-        self.load_model(model_name, device)
++        self.load_model(model_name, device, download_root)
+         self.old_stride = self.model.conv1.stride[0]
+         self.new_stride = stride
+         self.patch_vit_resolution(stride)
+@@ -24,8 +24,8 @@
+                 self.make_hook(i))
+ 
+     
+-    def load_model(self, model_name, device):
+-        model, preprocess = clip.load(model_name, device=device)
++    def load_model(self, model_name, device, download_root=None):
++        model, preprocess = clip.load(model_name, device=device, download_root=download_root)
+         self.model = model.visual
+         self.mean = torch.tensor(preprocess.transforms[-1].mean, device=device)
+         self.std = torch.tensor(preprocess.transforms[-1].std, device=device)
+--- a/nvdiffmodeling/src/renderutils/ops.py
++++ b/nvdiffmodeling/src/renderutils/ops.py
+@@ -40,6 +40,8 @@
+     # Linker options.
+     if os.name == 'posix':
+         ldflags = ['-lcuda']
++        if os.environ.get('CUDA_DRIVER_LIBRARY_DIR'):
++            ldflags.insert(0, '-L' + os.environ['CUDA_DRIVER_LIBRARY_DIR'])
+     elif os.name == 'nt':
+         ldflags = ['/DEFAULTLIB:cuda']
+ 
+@@ -53,8 +55,8 @@
+         'c_src/torch_bindings.cpp'
+     ]
+ 
+-    # Some containers set this to contain old architectures that won't compile. We only need the one installed in the machine.
+-    os.environ['TORCH_CUDA_ARCH_LIST'] = ''
++    # Honor an explicit architecture from the launcher. Otherwise PyTorch
++    # detects the architecture of the installed GPU.
+ 
+     # Compile and load.
+     source_paths = [os.path.join(os.path.dirname(__file__), fn) for fn in source_files]

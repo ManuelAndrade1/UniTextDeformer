@@ -1,0 +1,22 @@
+# Python 3.9; install CUDA PyTorch and the PyG CUDA wheels as in INSTALL.md first.
+torch==1.13.1+cu117
+torchvision==0.14.1+cu117
+numpy==1.26.4
+scipy==1.13.1
+cholespy==2.2.0
+easydict==1.13
+kornia==0.6.10
+pymeshlab==2025.7
+PyGLM==2.8.3
+PyYAML==6.0.3
+Pillow==11.3.0
+imageio==2.37.2
+trimesh==4.12.2
+Cython==0.29.37
+setuptools==69.5.1
+timm==0.9.7
+open-clip-torch==2.20.0
+huggingface-hub==0.25.2
+safetensors==0.4.5
+protobuf==3.20.3
+clip @ git+https://github.com/openai/CLIP.git@b46f5ac7587d2e1862f8b7b1573179d80dcdd620

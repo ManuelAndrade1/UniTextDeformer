@@ -1,0 +1,22 @@
+% Tabla para incluir en un documento LaTeX. Requiere \usepackage{booktabs}.
+\begin{table}[ht]
+    \centering
+    \renewcommand{\arraystretch}{1.15}
+    \setlength{\tabcolsep}{8pt}
+    \begin{tabular}{lccc}
+        \toprule
+        Experimento & CLIP R-Precision (L/14) $\uparrow$
+        & Intersecciones $\downarrow$ & Tiempo medio $\downarrow$ \\
+        \midrule
+        TextDeformer  & 90.0\% & 2.54\%  & 13m\,43s \\
+        Experimento 1 & 55.0\% & 4.78\%  & 13m\,30s \\
+        Experimento 2 & 55.0\% & 8.02\%  & 3m\,46s \\
+        Experimento 3 & 50.0\% & 10.45\% & 1m\,45s \\
+        \bottomrule
+    \end{tabular}
+    \caption{Comparaci\'on sobre 20 pares de malla y prompt, con 2.500
+    iteraciones y semilla 42. Experimentos 1, 2 y 3: Uni3D con VC,
+    sin VC, y sin VC ni DeltaP, respectivamente. Tiempo medio de
+    optimizaci\'on por caso.}
+    \label{tab:unitextdeformer-results}
+\end{table}

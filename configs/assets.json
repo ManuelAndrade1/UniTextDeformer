@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "repositories": [
+    {
+      "id": "textdeformer_code",
+      "path": "external/TextDeformer",
+      "url": "https://github.com/threedle/TextDeformer.git",
+      "revision": "f5302c66c0e5cbbd2fde3ad2aac2aec8f842924c"
+    },
+    {
+      "id": "uni3d_code",
+      "group": "uni3d",
+      "path": "external/Uni3D",
+      "url": "https://github.com/baaivision/Uni3D.git",
+      "revision": "64e03c3c42c196e8cb5ed03857810af9fc9ac39c"
+    },
+    {
+      "id": "pointnet2_code",
+      "group": "shared",
+      "path": "external/Pointnet2_PyTorch",
+      "url": "https://github.com/erikwijmans/Pointnet2_PyTorch.git",
+      "revision": "b5ceb6d9ca0467ea34beb81023f96ee82228f626"
+    },
+    {
+      "id": "nvdiffrast_code",
+      "group": "shared",
+      "path": "external/nvdiffrast_official",
+      "url": "https://github.com/NVlabs/nvdiffrast.git",
+      "revision": "78528e683210dfaa1be57e3c65aa37d3b36c6644"
+    }
+  ],
+  "assets": [
+    {
+      "id": "uni3d_base",
+      "group": "uni3d",
+      "path": "models/uni3d/base.pt",
+      "url": "https://huggingface.co/BAAI/Uni3D/resolve/3d8233b76aa350d72f6213ecd2123c2026b42355/modelzoo/uni3d-b/model.pt",
+      "revision": "3d8233b76aa350d72f6213ecd2123c2026b42355",
+      "size": 178008217,
+      "sha256": "bb533f918957e939f0e500376bef5166437883443da10fd9adccde0d1b512fba"
+    },
+    {
+      "id": "uni3d_text_source",
+      "group": "uni3d",
+      "path": "models/uni3d/eva_clip.safetensors",
+      "url": "https://huggingface.co/timm/eva02_enormous_patch14_plus_clip_224.laion2b_s9b_b144k/resolve/0162f50c2742be3c90b3a81e4e8066fc5a90e125/open_clip_model.safetensors",
+      "revision": "0162f50c2742be3c90b3a81e4e8066fc5a90e125",
+      "size": 10089917520,
+      "sha256": "dcdd43722d13420fd9682b162167bc10e1d2afe89f3da90224adf67658669d97"
+    },
+    {
+      "id": "uni3d_text_config",
+      "group": "uni3d",
+      "path": "models/uni3d/open_clip_config.json",
+      "url": "https://huggingface.co/timm/eva02_enormous_patch14_plus_clip_224.laion2b_s9b_b144k/resolve/0162f50c2742be3c90b3a81e4e8066fc5a90e125/open_clip_config.json",
+      "revision": "0162f50c2742be3c90b3a81e4e8066fc5a90e125",
+      "size": 584,
+      "sha256": "7dd195154d6f3c5d1d00ef8a80f84dd54c6384e34e3df1dbe71b3142c505a2ac"
+    },
+    {
+      "id": "clip_b32_baseline",
+      "group": "baseline",
+      "path": "models/ViT-B-32.pt",
+      "url": "https://openaipublic.azureedge.net/clip/models/40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af/ViT-B-32.pt",
+      "revision": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af",
+      "size": 353976522,
+      "sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "id": "Q01",
+    "case_key": "spot_to_giraffe",
+    "mesh": "meshes/spot.obj",
+    "mesh_sha256": "d48ca8edbacbc35bf9b536d797c908021b19ce22f17e1e3a041f4f323a54ed49",
+    "base_text_prompt": "a cow",
+    "text_prompt": "a giraffe"
+  }
+]

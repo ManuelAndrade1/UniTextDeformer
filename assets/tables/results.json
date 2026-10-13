@@ -1,0 +1,35 @@
+{
+  "case_count": 20,
+  "steps": 2500,
+  "seed": 42,
+  "results": [
+    {
+      "experiment": "TextDeformer",
+      "variant": null,
+      "r_precision_percent": 90.0,
+      "intersections_percent": 2.54,
+      "mean_optimization_seconds": 822.592362240702
+    },
+    {
+      "experiment": "Experimento 1",
+      "variant": "uni3d-vc",
+      "r_precision_percent": 55.0,
+      "intersections_percent": 4.78,
+      "mean_optimization_seconds": 809.9392536673695
+    },
+    {
+      "experiment": "Experimento 2",
+      "variant": "uni3d-no-vc",
+      "r_precision_percent": 55.0,
+      "intersections_percent": 8.02,
+      "mean_optimization_seconds": 226.05158245190978
+    },
+    {
+      "experiment": "Experimento 3",
+      "variant": "uni3d-no-vc-no-delta",
+      "r_precision_percent": 50.0,
+      "intersections_percent": 10.45,
+      "mean_optimization_seconds": 105.33832849301398
+    }
+  ]
+}
